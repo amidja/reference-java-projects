@@ -35,12 +35,14 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>13.0</version>
 			<scope>compile</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-core</artifactId>
@@ -57,7 +59,7 @@
 			<dependency>
 				<groupId>io.projectreactor</groupId>
 				<artifactId>reactor-bom</artifactId>
-				<version>Bismuth-RELEASE</version>
+				<version>2020.0.2</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
