@@ -1,5 +1,6 @@
 package au.amidja.core.example.reactor;
 
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.DisplayName;
@@ -20,7 +21,7 @@ public class BasicReactivePlaygroundTest {
 
     @DisplayName("imperative vs reactive")
     @Nested
-    class ImperativeVsReactive {
+    class ImperativeVsReactiveExample {
 
         @DisplayName("imperative code")
         @Test
@@ -51,4 +52,52 @@ public class BasicReactivePlaygroundTest {
         }
     }
 
+    @DisplayName("create Mono")
+    @Nested
+    class CreateMonoExample {
+
+        @DisplayName("with empty()")
+        @Test
+        void testCreateMonoEmpty() {
+            StepVerifier.create(Mono.empty()).expectNextCount(0).verifyComplete();
+        }
+
+        @DisplayName("with just()")
+        @Test
+        void testCreateMonoJust() {
+            StepVerifier.create(Mono.just("Hello")).expectNext("Hello").verifyComplete();
+        }
+
+        @DisplayName("with justOrEmpty()")
+        @Test
+        void testCreateMonoJustOrEmpty() {
+            StepVerifier.create(Mono.justOrEmpty(Optional.of("Hello")))
+                    .expectNext("Hello")
+                    .verifyComplete();
+        }
+
+        @DisplayName("with defer()")
+        @Test
+        void testCreateMonoDefer() {
+            StepVerifier.create(Mono.defer(() -> Mono.just("Hello")))
+                    .expectNext("Hello")
+                    .verifyComplete();
+        }
+
+        @DisplayName("with create()")
+        @Test
+        void testCreateMonoCreate() {
+            StepVerifier.create(Mono.create(sink -> sink.success("Hello")))
+                    .expectNext("Hello")
+                    .verifyComplete();
+        }
+
+        @DisplayName("with error()")
+        @Test
+        void testCreateMonoError() {
+            StepVerifier.create(Mono.error(new IllegalArgumentException("error")))
+                    .expectError(IllegalArgumentException.class)
+                    .verify();
+        }
+    }
 }
