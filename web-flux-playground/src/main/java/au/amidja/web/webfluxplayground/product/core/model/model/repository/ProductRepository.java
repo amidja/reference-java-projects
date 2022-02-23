@@ -1,6 +1,6 @@
-package au.amidja.web.webfluxplayground.core.model.repository;
+package au.amidja.web.webfluxplayground.product.core.model.model.repository;
 
-import au.amidja.web.webfluxplayground.core.model.Product;
+import au.amidja.web.webfluxplayground.product.core.model.model.Product;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 

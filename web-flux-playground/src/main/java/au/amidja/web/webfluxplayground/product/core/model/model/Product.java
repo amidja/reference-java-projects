@@ -1,4 +1,4 @@
-package au.amidja.web.webfluxplayground.core.model;
+package au.amidja.web.webfluxplayground.product.core.model.model;
 
 
 import org.springframework.data.annotation.Id;
