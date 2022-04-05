@@ -3,6 +3,7 @@ package au.amidja.web.webfluxplayground.product.web.controller;
 import au.amidja.web.webfluxplayground.product.core.model.model.Product;
 import au.amidja.web.webfluxplayground.product.core.model.model.repository.ProductRepository;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -18,13 +19,13 @@ public class ProductController {
         this.repostory = repository;
     }
 
-    @GetMapping
+    @GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
     public Flux<Product> getAllProducts(){
         return repostory.findAll();
     }
 
     @GetMapping("{id}")
-    public Mono<ResponseEntity< Product>> getProduct(@PathVariable String id){
+    public Mono<ResponseEntity<Product>> getProduct(@PathVariable String id){
         return repostory.findById(id)
                 .map(product -> ResponseEntity.ok(product))
                 .defaultIfEmpty(ResponseEntity.notFound().build());

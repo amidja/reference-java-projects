@@ -1,0 +1,16 @@
+spring:
+  output.ansi.enabled: always  
+  mongodb.embedded.version: 5.0.2
+  
+logging: 
+  #pattern:
+    #console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  level: 
+    root: info 
+    '[org.springframework]': OFF
+    '[org.springframework.boot.autoconfigure.mongo.embedded]': OFF
+    '[org.springframework.boot.autoconfigure]': OFF 
+    '[au.amidja.web.webfluxplayground]': DEBUG
+  logback:
+    rollingpolicy:
+      clean-history-on-start: true 

@@ -21,12 +21,10 @@ public class WebFluxPlaygroundApplication {
   		
         BufferingApplicationStartup applicationStartup = new BufferingApplicationStartup(2048);
         applicationStartup.addFilter(startupStep -> startupStep.getName().startsWith("spring.beans.instantiate"));
-        applicationStartup.addFilter(startupStep -> startupStep.getName().startsWith("pring.context.base-packages.scan"));        
-        
-        
+        applicationStartup.addFilter(startupStep -> startupStep.getName().startsWith("pring.context.base-packages.scan"));
+
         application.setApplicationStartup(applicationStartup);
-		
-		
+
 		application.run(args);
 		//SpringApplication.run(WebFluxPlaygroundApplication.class, args);
 	}

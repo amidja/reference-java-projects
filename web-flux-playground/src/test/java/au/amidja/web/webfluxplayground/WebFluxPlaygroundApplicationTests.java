@@ -9,5 +9,4 @@ class WebFluxPlaygroundApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

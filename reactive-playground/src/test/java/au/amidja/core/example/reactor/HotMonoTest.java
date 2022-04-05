@@ -13,6 +13,12 @@ public class HotMonoTest {
 
     private static final Logger log = LoggerFactory.getLogger(HotMonoTest.class);
 
+    /**
+     * Cold publishers >> They generate data anew for each subscription. If no subscription is created, data never gets generated.
+     * Hot publishers, on the other hand, do not depend on any number of subscribers. They might start publishing data right away and would continue doing so whenever a new Subscriber comes in.
+     * Hot operators in Reactor is just. To transform just into a cold publisher, you can use defer operator.
+     */
+
     @DisplayName("Hot Mono Publisher")
     @Nested
     public class HotMonoPublisher{

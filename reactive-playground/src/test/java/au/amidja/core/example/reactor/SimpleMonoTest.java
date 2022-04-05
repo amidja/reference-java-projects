@@ -8,11 +8,9 @@ import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Mono;
 
 @DisplayName("Simple Mono reactive publisher ")
-
 public class SimpleMonoTest {
 
     private static final Logger log = LoggerFactory.getLogger(SimpleMonoTest.class);
-
 
     @Test
     @Disabled
@@ -20,6 +18,14 @@ public class SimpleMonoTest {
         //Nothing happens unless you subscribe to a publisher.
         Mono.just("A").log()
                 .subscribe(s -> log.debug(s), null, () -> log.debug("Done"));
+    }
+
+    @Test
+    void onErrorTerminateMono() {
+
+        Mono.just("A")
+                .map(value ->{return new RuntimeException("My Runtime Exception");})
+                .log().subscribe();
     }
 
     @Test
