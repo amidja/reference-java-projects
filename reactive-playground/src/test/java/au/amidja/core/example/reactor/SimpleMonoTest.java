@@ -22,7 +22,6 @@ public class SimpleMonoTest {
 
     @Test
     void onErrorTerminateMono() {
-
         Mono.just("A")
                 .map(value ->{return new RuntimeException("My Runtime Exception");})
                 .log().subscribe();
