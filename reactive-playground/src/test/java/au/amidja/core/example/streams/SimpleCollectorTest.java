@@ -1,9 +1,10 @@
 package au.amidja.core.example.streams;
 
-import au.amidja.core.example.reactor.SimpleMonoTest;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import au.amidja.core.example.reactor.publisher.SimpleMonoTest;
 
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;

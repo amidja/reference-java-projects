@@ -1,4 +1,4 @@
-package au.amidja.core.example.reactor;
+package au.amidja.core.example.reactor.publisher;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
