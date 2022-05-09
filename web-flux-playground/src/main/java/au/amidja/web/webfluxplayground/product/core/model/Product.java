@@ -1,4 +1,4 @@
-package au.amidja.web.webfluxplayground.product.core.model.model;
+package au.amidja.web.webfluxplayground.product.core.model;
 
 
 import java.util.Objects;

@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import au.amidja.web.webfluxplayground.product.core.model.model.Product;
+import au.amidja.web.webfluxplayground.product.core.model.Product;
 import lombok.extern.slf4j.Slf4j;
 
 @ExtendWith(SpringExtension.class)
