@@ -10,7 +10,7 @@ logging:
     '[org.springframework]': OFF
     '[org.springframework.boot.autoconfigure.mongo.embedded]': OFF
     '[org.springframework.boot.autoconfigure]': OFF 
-    '[au.amidja.web.webfluxplayground]': DEBUG
+    '[au.amidja.web.webfluxplayground]': OFF
   logback:
     rollingpolicy:
       clean-history-on-start: true 

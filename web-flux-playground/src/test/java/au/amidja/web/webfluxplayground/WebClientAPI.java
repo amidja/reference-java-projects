@@ -28,21 +28,21 @@ public class WebClientAPI {
 
         api.postNewProduct()
                 .thenMany(api.getAllProducts())
-                //.take(1)
+                .take(1)
                 //.flatMap(p -> api.updateProduct(p.getId(), "White Tea", 0.99))
                 //.flatMap(p -> api.deleteProduct(p.getId()))
                 //.thenMany(api.getAllProducts())
                 //.thenMany(api.getAllEvents())
                 .subscribeOn(Schedulers.newSingle("myThread"))
-                .subscribe(System.out::println);
+                .subscribe(System.out::println)
+                
+                ;
 
 //        try {
 //            Thread.sleep(5000);  
 //        } catch(Exception e) { }
     }
 
-    
-    
     
     private Mono<ResponseEntity<Product>> postNewProduct() {
         return webClient
@@ -57,7 +57,8 @@ public class WebClientAPI {
                 .get()
                 .retrieve()
                 .bodyToFlux(Product.class)
-                .doOnNext(o -> System.out.println("**********GET: " + o));
+                .doOnNext(o -> System.out.println("**********GET: " + o))
+                ;
     }
 
     private Mono<Product> updateProduct(String id, String name, double price) {
