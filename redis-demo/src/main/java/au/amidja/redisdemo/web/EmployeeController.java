@@ -13,24 +13,20 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/employee")
-public class EmployeeController
-{
+public class EmployeeController{
 	private final EmployeeRepository employeeRepository;
 
-	public EmployeeController(EmployeeRepository employeeRepository)
-	{
+	public EmployeeController(EmployeeRepository employeeRepository){
 		this.employeeRepository = employeeRepository;
 	}
 
 	@GetMapping("/find/all")
-	public List<Employee> findAll()
-	{
+	public List<Employee> findAll(){
 		return employeeRepository.findAll();
 	}
 
 	@GetMapping("/find/{id}")
-	public Optional<Employee> findById(@PathVariable Long id)
-	{
+	public Optional<Employee> findById(@PathVariable Long id){
 		return employeeRepository.findById(id);
 	}
 }

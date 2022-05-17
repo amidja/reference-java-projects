@@ -1,2 +1,16 @@
 singleServerConfig:
-  address: "redis://localhost:6379"
+  address: "redis://redis:6379"
+
+#masterSlaveServersConfig:
+#  readMode: "MASTER"
+#  subscriptionMode: "MASTER"
+#  #slaveAddresses:
+#  #- "redis://127.0.0.1:6378"
+#  masterAddress: "redis://127.0.0.1:6379"
+#
+#sentinelServersConfig:
+#  readMode: "SLAVE"
+#  subscriptionMode: "SLAVE"
+#  sentinelAddresses:
+#  - "redis://127.0.0.1:26379"
+#  masterName: "mymaster"

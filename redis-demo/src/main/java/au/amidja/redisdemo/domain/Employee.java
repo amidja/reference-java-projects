@@ -10,8 +10,8 @@ import javax.persistence.Id;
 @Data
 @Entity
 @Cache(region = "employeeCache", usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Employee
-{
+public class Employee{
+
 	@Id
 	private Long id;
 	private String firstName;

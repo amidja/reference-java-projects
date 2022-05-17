@@ -1,5 +1,3 @@
-
-
 ### Server information
 server:
   port: 8080
@@ -7,9 +5,11 @@ server:
 ### Spring Properties
 spring:
   application:
-    name: PRES 2.0
+    name: redis-demo
+
   cache:
     type: redis
+
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
@@ -37,4 +37,3 @@ spring:
           redisson:
             fallback: true
             config: redission/redisson-dev.yaml
-
