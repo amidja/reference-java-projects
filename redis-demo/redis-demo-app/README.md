@@ -15,7 +15,7 @@ docker run -d -p8080:8080 amidja/redis-demo-docker
 
 #### End-Points
 - [Health](http://localhost:8080/actuator/health) 
-- [All Employees](http://localhost:8080//api/v1/employee/find/all)
+- [All Employees](http://localhost:8080/api/v1/employee/find/all)
 
 
 https://spring.io/guides/gs/spring-boot-docker/

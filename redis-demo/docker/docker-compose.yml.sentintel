@@ -1,4 +1,5 @@
-version: '2'
+#https://github.com/bitnami/bitnami-docker-redis-sentinel
+version: '3'
 
 services:
   redis-sentinel:
