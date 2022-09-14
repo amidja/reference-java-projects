@@ -34,7 +34,7 @@ public class SimpleMonoTest {
                     log.error("Caught: ", e);
                     return Mono.just("My Data");
                 })
-                .log()
+                .log() 
                 .subscribe();
     }
 
