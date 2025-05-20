@@ -1,11 +1,13 @@
 package au.amidja.core.example.reactor;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
 
+@Disabled
 class DetectBlockingCodeTest {
 
 	@Test

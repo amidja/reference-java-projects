@@ -14,7 +14,7 @@ public class HotMonoTest {
     private static final Logger log = LoggerFactory.getLogger(HotMonoTest.class);
 
     /**
-     * Cold publishers >> They generate data anew for each subscription. If no subscription is created, data never gets generated.
+     * Cold publishers >> They generate data a new for each subscription. If no subscription is created, data never gets generated.
      * Hot publishers, on the other hand, do not depend on any number of subscribers. They might start publishing data right away and would continue doing so whenever a new Subscriber comes in.
      * Hot operators in Reactor is just. To transform just into a cold publisher, you can use defer operator.
      */
@@ -35,7 +35,7 @@ public class HotMonoTest {
                     .expectNext("Eager Publisher")
                     .verifyComplete();
 
-            Thread.sleep(5000);
+            Thread.sleep(50);
 
             StepVerifier.create(msg)
                     .expectNext("Eager Publisher")
@@ -51,7 +51,7 @@ public class HotMonoTest {
 
             StepVerifier.create(deferMsg).expectNext("Lazy Publisher").verifyComplete();
 
-            Thread.sleep(5000);
+            Thread.sleep(50);
 
             StepVerifier.create(deferMsg).expectNext("Lazy Publisher").verifyComplete();
 

@@ -46,7 +46,9 @@ public class BasicReactivePlaygroundTest {
         @Test
         void testReactive() {
             Mono<String> greeting =
-                    Mono.just("World").map(String::toUpperCase).map(um -> "Hello " + um + "!");
+                    Mono.just("World")
+                    .map(String::toUpperCase)
+                    .map(um -> "Hello " + um + "!");
             StepVerifier.create(greeting).expectNext("Hello WORLD!").verifyComplete();
         }
     }

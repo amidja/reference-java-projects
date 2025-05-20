@@ -9,7 +9,6 @@ import reactor.core.publisher.Flux;
 import java.util.Arrays;
 
 @DisplayName("Simple Mono reactive publisher ")
-
 public class SimpleFluxTest {
 
     private static final Logger log = LoggerFactory.getLogger(SimpleFluxTest.class);
