@@ -25,6 +25,14 @@ public class SimpleFluxTest {
                 .log()
                 .subscribe();
     }
+    
+    
+    @Test
+    void fluxFromEmptyIterable() {
+        Flux.fromIterable(Arrays.asList())
+                .log()
+                .subscribe();
+    }
 
 
     @Test

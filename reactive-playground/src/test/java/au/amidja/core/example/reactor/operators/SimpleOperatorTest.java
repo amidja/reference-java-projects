@@ -15,7 +15,6 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Simple Mono reactive publisher ")
-
 public class SimpleOperatorTest {
 
     private static final Logger log = LoggerFactory.getLogger(SimpleOperatorTest.class);
