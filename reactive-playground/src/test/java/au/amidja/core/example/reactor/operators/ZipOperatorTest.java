@@ -7,11 +7,13 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.util.function.Tuple2;
 
 @DisplayName("Zip Operator testing ")
+@Slf4j
 class ZipOperatorTest {
 
 	
@@ -28,7 +30,14 @@ class ZipOperatorTest {
 		         .flatMap(userId -> Mono.just(userId)
 		                 .zipWith(groupLabel));
 		 
-		 zippingFluxToMono.log().subscribe();
+		 
+		 //Return Integers that are less than a value
+		 Flux<Integer>  intFlux =zippingFluxToMono
+				 .filter(t -> t.getT1() < 4)
+				 .map(t ->t.getT1());
+		 		
+		 intFlux.log().subscribe();
+		 //zippingFluxToMono.log().subscribe();
 	}
 	
 	
@@ -106,6 +115,5 @@ class ZipOperatorTest {
 		
 		//StepVerifier.create(res).expectNext("3").expectComplete();
 	}
-
 
 }

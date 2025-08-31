@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  * Therefore, we don't need to modify the implementing classes.
  *
  */
-public class DefaultTest {
+public class InterfaceDefaultMethodTest {
 
     public interface LegacyInterface {
         String legacyMethod();

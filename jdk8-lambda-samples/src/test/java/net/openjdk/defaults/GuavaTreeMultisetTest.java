@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class GuavaTest {
+public class GuavaTreeMultisetTest {
 
     @Test
     public void testTreeMultiset() {
