@@ -8,7 +8,8 @@ import java.util.List;
 public class Lambdas {
 
   public static void main(String... args) {
-    // Simple example
+
+	// A Simple example
     Runnable r = () -> System.out.println("Hello!");
     r.run();
 
@@ -23,6 +24,10 @@ public class Lambdas {
     List<Apple> greenApples = filter(inventory, (Apple a) -> a.getColor() == Color.GREEN);
     System.out.println(greenApples);
 
+    //The types of the parameters of lambda expressions can be omitted from the lambda syntax  
+    List<Apple> moreGreenApples = filter(inventory, a -> a.getColor() == Color.GREEN);
+    System.out.println(moreGreenApples);
+    
     // [Apple{color=GREEN, weight=80}, Apple{color=RED, weight=120}, Apple{color=GREEN, weight=155}]
     Comparator<Apple> c = (Apple a1, Apple a2) -> a1.getWeight() - a2.getWeight();
     inventory.sort(c);
@@ -39,9 +44,8 @@ public class Lambdas {
     return result;
   }
 
+  @FunctionalInterface
   interface ApplePredicate {
-
     boolean test(Apple a);
-
   }
 }
