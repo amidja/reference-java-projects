@@ -3,14 +3,14 @@ package modernjavainaction.chap11;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
 import static java.util.Optional.ofNullable;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Optional;
 import java.util.Properties;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ReadPositiveIntParam {
+public class ReadPositiveIntParamLocalTest {
 
   @Test
   public void testMap() {
@@ -45,7 +45,7 @@ public class ReadPositiveIntParam {
 
   public static int readDurationWithOptional(Properties props, String name) {
     return ofNullable(props.getProperty(name))
-        .flatMap(ReadPositiveIntParam::s2i)
+        .flatMap(ReadPositiveIntParamLocalTest::s2i)
         .filter(i -> i > 0).orElse(0);
   }
 

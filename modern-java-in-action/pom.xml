@@ -10,24 +10,35 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jmh.version>1.21</jmh.version>
+    <rxjava2.version>2.2.2</rxjava2.version>
+    <junit-jupiter.version>5.11.4</junit-jupiter.version>
   </properties>
-
+    <!--
+    Microbenchmarking With Java
+        https://www.baeldung.com/java-microbenchmark-harness
+    -->
   <dependencies>
     <dependency>
       <groupId>org.openjdk.jmh</groupId>
       <artifactId>jmh-core</artifactId>
-      <version>1.21</version>
+      <version>${jmh.version}</version>
     </dependency>
     <dependency>
       <groupId>org.openjdk.jmh</groupId>
       <artifactId>jmh-generator-annprocess</artifactId>
-      <version>1.21</version>
+      <version>${jmh.version}</version>
     </dependency>
+    <!--
+    RxJava: Reactive Extensions for the JVM
+        https://github.com/ReactiveX/RxJavahttps://github.com/ReactiveX/RxJava
+    -->
     <dependency>
       <groupId>io.reactivex.rxjava2</groupId>
       <artifactId>rxjava</artifactId>
-      <version>2.2.2</version>
+      <version>${rxjava2.version}</version>
     </dependency>
+    <!-- Akka Actor Model -->
     <dependency>
       <groupId>com.typesafe.akka</groupId>
       <artifactId>akka-actor_2.12</artifactId>
@@ -38,10 +49,15 @@
       <artifactId>akka-stream_2.12</artifactId>
       <version>2.5.16</version>
     </dependency>
+  <!--
+  Junit5: https://docs.junit.org/current/user-guide/
+
+  -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit-jupiter.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
